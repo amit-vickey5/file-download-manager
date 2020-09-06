@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+/*import "google/protobuf/struct.proto";*/
+
+package payoutlinks;
+option go_package = "filedownloadmanager";
+
+service FileDownloadManager {
+    rpc Sample (SampleRequest) returns (SampleResponse);
+    rpc AddUser (AddUserRequest) returns (AddUserResponse);
+    rpc Download (DownloadRequest) returns (DownloadResponse);
+}
+
+enum DownloadType {
+  SYNC = 0;
+  ASYNC = 1;
+}
+
+message SampleRequest {
+  string field_1 = 1;
+  string field_2 = 2;
+}
+
+message SampleResponse {
+  bool is_success = 1;
+  string message = 2;
+}
+
+message AddUserRequest {
+  string username = 1;
+  string email = 2;
+}
+
+message AddUserResponse {
+  bool is_success = 1;
+  string username = 2;
+  string secret_key = 4;
+}
+
+message DownloadRequest {
+  repeated string files = 1;
+  DownloadType download_type = 2;
+}
+
+message DownloadResponse {
+  string id = 1;
+  repeated string files = 2;
+}

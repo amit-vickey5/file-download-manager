@@ -1,0 +1,21 @@
+[CoreConfig]
+    AppEnv                = "default"
+    ServiceName           = "payout-links"
+    Hostname              = "payout-links.razorpay.com"
+    Port                  = ":8000"
+    ShutdownTimeout       = 6
+    ShutdownDelay         = 1
+
+[LoggerConfig]
+    LogLevel        = "debug"
+    SentryDSN       = ""
+    SentryEnabled   = false
+    SentryLogLevel  = ""
+
+[DBConfig]
+    Dialect         = "mysql"
+    Protocol        = "tcp"
+    HostIp          = "127.0.0.1/3306"
+    Username        = "root"
+    Password        = "toor"
+    Database        = "file-download-manager"
